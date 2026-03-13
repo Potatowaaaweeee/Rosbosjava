@@ -1,0 +1,39 @@
+body {
+    background-image: url('rose.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+h1 {
+    color: white;
+    text-align: center;
+    margin-top: 20%;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+p {
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: tomato;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+}

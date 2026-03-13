@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Vagn</title>
+    <link rel="stylesheet" href="styles/vagn.css">
+</head>
+<body>
+    <div class="container">
+    <h1>Vagn</h1>
+    <p>Tack för att du har väljt blommer</p>
+        <h2>Your cart</h2>
+<ul id="cartItems"></ul>
+<p id="total"></p>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+    const list = document.getElementById('cartItems');
+    const totalEl = document.getElementById('total');
+    let total = 0;
+
+    if (!list || !totalEl) return;
+
+    if (cart.length === 0) {
+        list.innerHTML = '<li>Vagnen är tom</li>';
+    } else {
+        cart.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = (item.name ? item.name + ' - ' : '') + (item.price != null ? item.price + ' kr' : '');
+            list.appendChild(li);
+            total += Number(item.price) || 0;
+        });
+    }
+
+    totalEl.textContent = 'Total: ' + total + ' kr';
+});
+</script>
+
+</body>
+</html>

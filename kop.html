@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Köp, NU</title>
+    <link rel="stylesheet" href="styles/kop.css">
+    <script>
+ function addToCart(name, price) {
+
+    let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+    cart.push({ name, price });
+
+    sessionStorage.setItem("cart", JSON.stringify(cart));
+
+    alert("Flower added to cart!");
+}
+</script>
+</head>
+<body>
+    <h1>Köp våra blommor</h1>
+    <div class="nav-links">
+        <a href="index.html">Tillbaka</a>
+    </div>
+    <div class="products">
+        <div class="product1">
+            <img src="styles/roda.jpg" alt="Röda rosor">
+            <h2>Röda rosor</h2>
+            <p>Pris: 100 kr/styck</p>
+            <button onclick="addToCart('Röda rosor', 100)">Köp nu</button>
+        </div>
+        <div class="product2">
+            <img src="styles/vita.jpg" alt="Vita rosor">
+            <h2>Vita rosor</h2>
+            <p>Pris: 120 kr/styck</p>
+            <button onclick="addToCart('Vita rosor', 120)">Köp nu</button>
+        </div>
+        <div class="product3">
+            <img src="styles/gula.jpg" alt="Gula rosor">
+            <h2>Gula rosor</h2>
+            <p>Pris: 90 kr/styck</p>
+            <button onclick="addToCart('Gula rosor', 90)">Köp nu</button>
+        </div>
+    </div>
+    <div class="petal" style="left:10%; animation-duration:4s;">🌸</div>
+    <div class="petal" style="left:40%; animation-duration:5s;">🌸</div>
+    <div class="petal" style="left:70%; animation-duration:6s;">🌸</div>
+
+</body>
+</html>
